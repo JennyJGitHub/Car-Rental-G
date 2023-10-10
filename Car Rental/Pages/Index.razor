@@ -33,14 +33,8 @@
                     <td>@v.Type</td>
                     <td>@v.CostDay</td>
                     <td>
-                        @if (v.Status == VehicleStatuses.Available)
-                        {
-                            <span class="badge rounded-pill text-bg-dark">@VehicleStatuses.Available</span>
-                        }
-                        else
-                        {
-                            <span class="badge rounded-pill text-bg-danger">@VehicleStatuses.Booked</span>
-                        }
+                        <span class="badge rounded-pill text-bg-@(v.Status == 
+                            VehicleStatuses.Available ? "dark" : "danger")">@v.Status</span>
                     </td>
                 </tr>
             }
